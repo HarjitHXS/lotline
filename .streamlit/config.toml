@@ -1,0 +1,16 @@
+[theme]
+base = "light"
+primaryColor = "#16202A"
+backgroundColor = "#E6E5E1"
+secondaryBackgroundColor = "#FBFBF9"
+textColor = "#16202A"
+borderColor = "#C8C6BE"
+baseRadius = "2px"
+
+[server]
+headless = true
+enableStaticServing = true
+maxUploadSize = 10
+
+[browser]
+gatherUsageStats = false

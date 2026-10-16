@@ -1,0 +1,329 @@
+# Cumberland, RI: approval rules as DATA.
+# Every rule carries a citation. Read 2026-10-16 from the sources below. Drafted by AI from the
+# source text, so CHECK against the source before relying on it. Not legal advice.
+
+town: Cumberland
+read_date: "2026-10-16"
+
+sources:
+  zoning: {title: "Cumberland Code, Appendix B: Zoning", url: "https://ecode360.com/30187156"}
+  use_table: {title: "Appendix B, Table 1: Use Table (Supp 19, Apr 2026)", url: "https://ecode360.com/attachment/334062/CU3602-Ba%20Table%201%20Use%20Table.pdf"}
+  ldsr: {title: "Cumberland Code, Appendix A: Land Development & Subdivision Regulations", url: "https://ecode360.com/30186134"}
+  schedule: {title: "2026 TRC / Planning Board Meeting Schedule and Deadlines", url: "https://www.cumberlandri.gov/DocumentCenter/View/2407/2026-TRC-PB-Meeting-Schedule_V2"}
+  directory: {title: "Planning & Community Development staff directory", url: "https://www.cumberlandri.gov/Directory.aspx?did=19"}
+  state_adu: {title: "R.I. Gen. Laws § 45-24-73 (ADUs)", url: "https://webserver.rilegislature.gov/Statutes/TITLE45/45-24/45-24-73.htm"}
+  state_reuse: {title: "R.I. Gen. Laws § 45-24-37 (adaptive reuse permitted)", url: "https://webserver.rilegislature.gov/Statutes/TITLE45/45-24/45-24-37.htm"}
+  state_substandard: {title: "R.I. Gen. Laws § 45-24-38 (substandard lots of record)", url: "https://webserver.rilegislature.gov/Statutes/TITLE45/45-24/45-24-38.htm"}
+  assessor: {title: "Cumberland assessor database (Vision), for lot size and building area", url: "https://gis.vgsi.com/cumberlandri/"}
+  sewer_town: {title: "Cumberland DPW Sewers page (connection permits)", url: "https://www.cumberlandri.gov/236/Sewers"}
+  sewer_map_state: {title: "RIGIS Sewered Areas (planning-level, about 2012)", url: "https://www.rigis.org/datasets/edc::sewered-areas"}
+  town_gis: {title: "Cumberland town GIS (MapGeo), 'Sewer System' theme", url: "https://cumberlandri.mapgeo.io/"}
+  opengov: {title: "Cumberland permit and application portal (OpenGov)", url: "https://cumberlandri.portal.opengov.com/"}
+
+contacts:
+  - {name: "Amelia Morton", title: "Planning Director (chairs the Technical Review Committee)", phone: "401-728-2400 ext. 178", email: "amorton@cumberlandri.gov", when: "Pre-application meetings, which path your project takes, land development and Planning Board questions"}
+  - {name: "Alexandra Langille", title: "Planner", phone: "401-728-2400 ext. 142", email: "alangille@cumberlandri.gov", when: "Application questions and checklists"}
+  - {name: "Frank Polidoro", title: "Planning Clerk", phone: "401-728-2400 ext. 140", email: "fpolidoro@cumberlandri.gov", when: "Filing deadlines and help preparing the application (named in the 2026 schedule)"}
+  - {name: "Sewer Superintendent", title: "Department of Public Works, Sewer Department", phone: "401-728-2400 ext. 122", email: "", when: "Is the lot connected to (or next to) town sewer? Written sewer availability letter; new connections need an NBC permit first"}
+  - {name: "Building Official / Zoning Officer", title: "Building Department (staff to the Zoning Board)", phone: "401-728-2400", email: "", when: "Building permits, zoning certificates, modifications (§ 18-4), Zoning Board filings"}
+office: "Town Hall, 45 Broad Street, 2nd floor, Cumberland, RI 02864 · Mon–Fri 8:30am–4:30pm"
+
+# Use table (Table 1). Y = allowed, N = prohibited, S = special use permit.
+zones: [A-1, A-2, R-1, R-2, R-3, C-1, C-2, I-1, I-2, O-S]
+uses:
+  single_family: {label: "One-household detached dwelling (row 8)", A-1: Y, A-2: Y, R-1: Y, R-2: Y, R-3: Y, C-1: N, C-2: N, I-1: N, I-2: N, O-S: N}
+  adu: {label: "Accessory dwelling unit (row 9B, must meet § 6-6)", A-1: Y, A-2: Y, R-1: Y, R-2: Y, R-3: Y, C-1: N, C-2: N, I-1: N, I-2: N, O-S: N}
+  two_family: {label: "Two-household dwelling (row 10)", A-1: N, A-2: N, R-1: N, R-2: Y, R-3: Y, C-1: N, C-2: N, I-1: N, I-2: N, O-S: N}
+  multifamily: {label: "Multi-household dwelling, 3+ units (row 11)", A-1: N, A-2: N, R-1: N, R-2: N, R-3: Y, C-1: N, C-2: N, I-1: N, I-2: N, O-S: N}
+  mixed_use: {label: "Mixed-use residential (row 12)", A-1: N, A-2: N, R-1: N, R-2: N, R-3: N, C-1: Y, C-2: Y, I-1: N, I-2: N, O-S: N}
+
+# § 5-2 dimensional tables. Key = what utilities the lot has.
+dimensional:
+  cite: "Appendix B § 5-2"
+  both:          # public water AND public sewer: § 5-2(c)
+    A-1: {min_lot: 217800, first_unit: 217800, per_extra_unit: null, frontage: 250, front: 100, side: 60, rear: 80, coverage: 0.05, height: 35}
+    A-2: {min_lot: 80000, first_unit: 80000, per_extra_unit: null, frontage: 180, front: 75, side: 20, rear: 30, coverage: 0.15, height: 35}
+    R-1: {min_lot: 25000, first_unit: 25000, per_extra_unit: null, frontage: 100, front: 20, side: 10, rear: 25, coverage: 0.20, height: 35}
+    R-2: {min_lot: 10000, first_unit: 10000, per_extra_unit: 5000, max_units: 2, frontage: 40, front: 10, side: 10, rear: 15, coverage: 0.40, height: 35}
+    R-3: {min_lot: 10000, first_unit: 10000, per_extra_unit: 5000, frontage: 40, front: 10, side: 10, rear: 15, coverage: 0.40, height: 35}
+  one:           # public water OR sewer, not both: § 5-2(b)
+    A-1: {min_lot: 217800, first_unit: 217800, per_extra_unit: null, frontage: 250, front: 100, side: 60, rear: 80, coverage: 0.05, height: 35}
+    A-2: {min_lot: 80000, first_unit: 80000, per_extra_unit: null, frontage: 180, front: 75, side: 20, rear: 30, coverage: 0.15, height: 35}
+    R-1: {min_lot: 40000, first_unit: 40000, per_extra_unit: null, frontage: 100, front: 25, side: 10, rear: 25, coverage: 0.20, height: 35}
+    R-2: {min_lot: 30000, first_unit: 30000, per_extra_unit: 10000, max_units: 2, frontage: 90, front: 25, side: 10, rear: 15, coverage: 0.20, height: 35}
+    R-3: {min_lot: 30000, first_unit: 30000, per_extra_unit: 10000, frontage: 90, front: 25, side: 10, rear: 15, coverage: 0.20, height: 35}
+  none:          # neither: § 5-2(a). The table "does not apply to the R-2 and R-3 Zones".
+    A-1: {min_lot: 217800, first_unit: 217800, per_extra_unit: null, frontage: 250, front: 100, side: 60, rear: 80, coverage: 0.05, height: 35}
+    A-2: {min_lot: 80000, first_unit: 80000, per_extra_unit: null, frontage: 180, front: 75, side: 20, rear: 30, coverage: 0.15, height: 35}
+    R-1: {min_lot: 80000, first_unit: 80000, per_extra_unit: null, frontage: 180, front: 50, side: 20, rear: 30, coverage: 0.20, height: 35}
+
+adu:
+  cite: "Appendix B § 6-6; R.I. Gen. Laws § 45-24-73"
+  by_right_if: ["Owner-occupied, as a reasonable accommodation for a family member with a disability",
+                "Lot is 20,000 sq ft or more and the primary use is residential",
+                "Inside the existing footprint of the house or an existing accessory building, without expanding it"]
+  limits: ["One ADU per lot, on a lot with a single-family or multifamily dwelling (§ 6-6(a)-(b))",
+           "Up to 2 bedrooms (§ 6-6(d))",
+           "1 off-street parking space per bedroom (§ 6-6(e))",
+           "Size: the lesser of 60% of the main house's floor area or 900 sq ft (studio/1 BR) / 1,200 sq ft (2 BR) (§ 6-6(g))",
+           "Must meet Article 5 dimensional rules, except no zoning relief is needed inside an existing legal nonconforming footprint (§ 6-6(h)-(i))",
+           "No short-term or transient rental (§ 6-6(j))"]
+
+thresholds:
+  cite: "Appendix A § 2 definitions"
+  minor_ld_max_units: 9          # "Multifamily residential ... development of nine units or less"
+  minor_sub_max_lots: 9
+  modification_max_pct: 15       # § 18-4(a)
+  modification_no_notice_pct: 5  # § 18-4(c)
+
+timelines:
+  minor_certify_days: "25 days (15 if no street is created or extended) for the Administrative Officer to certify the application complete or incomplete, § 5-G(d)"
+  minor_decision_admin: "65 days after certified complete, decided by the Administrative Officer, § 5-G(g)"
+  minor_decision_board: "95 days after certified complete, decided by the Planning Board after a public hearing (if zoning relief/UDR or a new street), § 5-G(g)"
+  minor_expiry: "Approval expires one year from the date of approval unless recorded or extended, § 5-G(k)"
+  major_stages: "Pre-application meeting (required), Master Plan with public hearing, Preliminary Plan, then Final Plan, § 5-E and § 5-H"
+  major_certify: "25 days to certify each stage complete or incomplete, § 5-H"
+  modification: "Zoning Officer decides suitability within 10 days. Over 5%: abutters get notice and have 14 days to object; an objection sends it to the Zoning Board, § 18-4"
+  failure_to_act: "If the Planning Board or Administrative Officer misses the deadline, the preliminary plan is approved by law, § 5-G(h)"
+
+schedule_2026:
+  cite: "2026 TRC / Planning Board schedule"
+  note: "Filing by the deadline does not guarantee a Planning Board slot. The Administrative Officer must first certify the application complete, and the TRC reviews it first."
+  rows:   # [filing deadline, TRC meeting, Planning Board meeting]
+    - ["2026-01-22", "2026-02-10", "2026-03-26"]
+    - ["2026-02-26", "2026-03-10", "2026-04-30"]
+    - ["2026-03-26", "2026-04-14", "2026-05-28"]
+    - ["2026-04-23", "2026-05-12", "2026-06-25"]
+    - ["2026-05-28", "2026-06-09", "2026-07-30"]
+    - ["2026-06-25", "2026-07-14", "2026-08-27"]
+    - ["2026-07-23", "2026-08-11", "2026-09-24"]
+    - ["2026-08-27", "2026-09-08", "2026-10-29"]
+    - ["2026-10-01", "2026-10-13", "2026-12-03"]
+  zoning_only: "Zoning applications that don't need land development or subdivision review are due to the Zoning Clerk by the first Friday of the month."
+  who_reviews:
+    planning_board: "Major land development/subdivisions, Unified Development Review, Formal Development Plan Review, Comprehensive Permits"
+    administrative_officer: "Minor land development/subdivisions (without UDR) and Administrative Development Plan Review"
+    trc: "All projects are first reviewed by the Technical Review Committee"
+
+# ---------- Fees: Appendix A Fee Schedule (the posted version is dated 2015-07-01; confirm current fees with Planning) ----------
+fees:
+  cite: "Appendix A (LDSR) Attachment 1, Fee Schedule"
+  note: "Posted schedule is dated 07-01-2015. Town Council can change fees, so confirm the current amounts. Consultant peer-review costs (§ 5-M) and recording fees are extra."
+  per_unit_stage:      # [base, per lot/unit]
+    pre_application: [250, 50]
+    master_plan: [250, 75]
+    preliminary_plan: [250, 50]
+    preliminary_plan_with_road: [250, 75]
+    final_plan: [250, 25]
+  flat:
+    incomplete_application_resubmission: 50
+    continuation_at_applicant_request: 100
+    workshop_special_meeting: 400
+    survey_review_for_recording: 50
+
+# ---------- Submission checklists, each item with its source ----------
+documents:
+  note: "Appendix D was last posted 07-01-2015, and the 2024 amendments say applicants submit 'the items identified in the checklist'. Ask Planning for the current checklist and treat this list as a starting point."
+  general_plan_requirements:
+    title: "Every plan set (Appendix D, Article A)"
+    items:
+      - {t: "Title block: project name, submission type/stage, owner and applicant names and addresses, plat and lot numbers, plan date and revisions, PE or surveyor name and RI registration number, graphic scale and north arrow", c: "App. D Art. A(1)"}
+      - {t: "General notes: zoning classification, total area, minimum area/frontage/dimensions/setbacks, wetlands (say 'none' if none), easements (say 'none' if none)", c: "App. D Art. A(2)"}
+      - {t: "Legend: existing and proposed property lines and setbacks, structures, utilities, manholes, catch basins", c: "App. D Art. A(3)"}
+      - {t: "Sheets 18x24 or 24x36 for the Planning file (11x17 reductions for distribution), numbered in sequence", c: "App. D Art. A(4)"}
+      - {t: "Location map showing the project within 1/2 mile, with streams, ponds, wetlands, reservoirs and public wells within 1,000 ft", c: "App. D Art. A(5)"}
+  pre_application:
+    title: "Pre-application sketch plan (Appendix D, Article C)"
+    items:
+      - {t: "Completed application and fee (see fees)", c: "App. D Art. C(1)(a)"}
+      - {t: "At least 15 prints of the sketch plan. File no less than 14 days before the Planning Board meeting", c: "App. D Art. C(1)(b)"}
+      - {t: "Existing and proposed lot areas and dimensions, and streets", c: "Art. C(2)(a)"}
+      - {t: "Existing buildings, structures and utilities on the lot and on abutting lots", c: "Art. C(2)(b)"}
+      - {t: "Platted streets next to the parcel, with width and names", c: "Art. C(2)(c)"}
+      - {t: "Easements and proposed deed restrictions (say 'none' if none)", c: "Art. C(2)(d)"}
+      - {t: "Scale no smaller than 1 in = 80 ft; phasing plan (or 'none'); approximate topography", c: "Art. C(2)(e)-(h)"}
+      - {t: "Approximate wetlands and water bodies; private wells and septic systems within 200 ft", c: "Art. C(2)(j)-(k)"}
+  preliminary_plan:
+    title: "Preliminary plan (Appendix D, Article E)"
+    items:
+      - {t: "Completed preliminary application and filing fee", c: "App. D Art. E(1)(a)"}
+      - {t: "At least 20 prints of the preliminary plan. File no less than 14 days before the Planning Board meeting", c: "Art. E(1)(b)"}
+      - {t: "Certification from the water supplier that water can be provided (Pawtucket Water Supply Board serves Valley Falls; Cumberland Water serves north of Marshall Ave)", c: "Art. E(1)(e)"}
+      - {t: "Certification from Cumberland Public Works that the sewer layout is acceptable and can take the project's flow", c: "Art. E(1)(f)"}
+      - {t: "Advisory report from the Police Traffic Officer on traffic control signs and devices", c: "Art. E(1)(g)"}
+      - {t: "Notarized owner authorization if the owner is not the applicant", c: "Art. E(1)(h)"}
+      - {t: "Abutters' names and addresses on two sets of self-adhesive mailing labels", c: "Art. E(2)(h)"}
+      - {t: "Ground elevations and FEMA floodplains; contours at 2-ft intervals; wetland and stream setbacks within 200 ft", c: "Art. E(2)(j)-(k)"}
+      - {t: "Existing and proposed water, sewer and drainage lines, manholes and catch basins, with sizing data", c: "Art. E(2)(n)"}
+      - {t: "Easements, covenants and draft legal documents (or 'none')", c: "Art. E(2)(o)"}
+      - {t: "Curb lines and driveway openings; hydrants; wells and septic systems within 200 ft", c: "Art. E(2)(p), (r)-(t)"}
+      - {t: "Soil erosion and sedimentation control plan; stormwater controls with design data", c: "Art. E(2)(u), (w)"}
+      - {t: "Landscape plan by a RI-registered Landscape Architect (trees 16 in. or larger within 50 ft of the right-of-way)", c: "Art. E(2)(aa)"}
+      - {t: "Street lighting plan (existing lights within 50 ft and proposed lights)", c: "Art. E(2)(bb)"}
+      - {t: "All needed state and federal permits; DEM wetlands determination if wetlands are present", c: "Art. E(2)(cc), (ee)"}
+  master_plan:
+    title: "Master plan, major projects (Appendix D, Article D)"
+    items:
+      - {t: "Completed application and fee; at least 20 prints, filed no less than 14 days before the meeting", c: "App. D Art. D(1)"}
+      - {t: "Total area of lots and roadways; topography and existing structures and natural features on the site and abutting lots", c: "Art. D(2)(a)-(b)"}
+      - {t: "Tentative construction phasing; analysis of neighborhood and district impacts", c: "Art. D(2)(c)-(d)"}
+      - {t: "DEM wetland edge verification, or 'no wetlands' on the plan", c: "Art. D(2)(e)"}
+      - {t: "Buildable-area analysis with a constraint plan (wetlands, slopes over 15%, easements, 100-year floodplain)", c: "Art. D(2)(f)"}
+      - {t: "Abutters' names and addresses on mailing labels", c: "Art. D(2)(g)"}
+  final_plan:
+    title: "Final plan (Appendix D, Article F)"
+    items:
+      - {t: "Completed final application and fee; at least 15 prints (2 on Mylar), filed no less than 14 days before the meeting", c: "App. D Art. F(1)(a)-(b)"}
+      - {t: "Municipal lien certificate showing no taxes are due", c: "Art. F(1)(d)"}
+      - {t: "Deeds, easements and covenants; statement describing easements (in duplicate)", c: "Art. F(1)(f)-(g), (n)"}
+      - {t: "PE certification that drainage handles a 100-year storm", c: "Art. F(1)(h)"}
+      - {t: "The approved preliminary plan showing every change the Board directed; state and federal permits obtained or changed", c: "Art. F(1)(l)-(m)"}
+      - {t: "Surveyor certification that the plat is correct; engineer certification of stormwater provisions", c: "Art. F(2)(e)"}
+      - {t: "Construction schedule or financial guarantees for public improvements, and tax collector certification (minor projects)", c: "§ 5-G(j) in Appendix A"}
+  zoning_modification:
+    title: "Modification request to the Zoning Officer (Appendix B, § 18-4)"
+    items:
+      - {t: "Written request that says which dimension (lot area, setback, etc.) and by what percent it falls short. Limit is 15%", c: "App. B § 18-4(a)"}
+      - {t: "Plan or survey showing the dimension. Ask the Zoning Officer for the current form", c: "App. B § 17-10"}
+      - {t: "Reasons for each suitability test: needed for full enjoyment of the permitted use; neighbors not substantially injured; no wetlands rule violated; no flood-hazard variance needed", c: "App. B § 18-4(b)(1)-(4)"}
+      - {t: "If more than 5%: abutters are notified by first-class mail and a newspaper notice runs; 14 days for written objections. An objection sends it to the Zoning Board as a variance", c: "App. B § 18-4(c)-(d)"}
+  variance:
+    title: "Dimensional variance evidence (RIGL § 45-24-41; Appendix B § 18-2)"
+    items:
+      - {t: "The hardship comes from unique characteristics of this land or building, not from the neighborhood in general, and not from a physical or economic disability of the applicant", c: "RIGL § 45-24-41(d)(1)"}
+      - {t: "The hardship is not the result of any prior action of the applicant", c: "RIGL § 45-24-41(d)(2)"}
+      - {t: "The variance will not alter the general character of the area or impair the intent of the zoning ordinance or comprehensive plan", c: "RIGL § 45-24-41(d)(3)"}
+      - {t: "The hardship is more than a mere inconvenience: the relief sought is minimal to a reasonable enjoyment of the permitted use. More profit is not grounds", c: "RIGL § 45-24-41(e)(2)"}
+      - {t: "Notice: 14 days' newspaper notice and first-class mail to abutters, with a notarized affidavit of mailing. The applicant pays for notice", c: "RIGL § 45-24-41(b)"}
+      - {t: "Owner(s) must join the application; a corporation signs by its attorney or authorized officer", c: "App. B § 18-1(a)"}
+      - {t: "Expert report (planner, surveyor or engineer) that addresses each standard. Providence applicants file one; the pack's Case C is an example", c: "Practice, not a code requirement"}
+  building_permit_adu:
+    title: "ADU building permit package (Appendix B § 6-6)"
+    items:
+      - {t: "Floor plans showing a complete, independent living unit (kitchen, bath, sleeping area) with up to 2 bedrooms", c: "App. B § 6-6(c)-(d)"}
+      - {t: "Calculation that the ADU is no more than 60% of the main house's floor area and no more than 900 sq ft (studio/1 BR) or 1,200 sq ft (2 BR)", c: "§ 6-6(g)"}
+      - {t: "Site plan showing the ADU and the main house meet the Article 5 setbacks and lot coverage for the zone, and showing 1 off-street parking space per bedroom", c: "§ 6-6(e), (h)"}
+      - {t: "Proof that one by-right condition is met: lot of 20,000 sq ft or more; or inside the existing footprint; or disability accommodation in an owner-occupied home", c: "§ 6-6(a); RIGL § 45-24-73"}
+      - {t: "A statement that the ADU will not be used as a short-term or transient rental", c: "§ 6-6(j)"}
+      - {t: "Septic or sewer approval for the added bedrooms (DEM if on septic; town sewer if connected)", c: "§ 6-6(f)"}
+      - {t: "Ask the Building Official for the current permit application and plan requirements. The code doesn't list them", c: "App. B § 17-10"}
+  building_permit_general:
+    title: "Building permit package (two-family conversion or new build)"
+    items:
+      - {t: "Survey or site plan showing setbacks, lot coverage and parking for the zone", c: "App. B § 5-2"}
+      - {t: "Floor plans and elevations showing the number of units; height within 35 ft", c: "App. B § 5-2"}
+      - {t: "Zoning certificate or written zoning determination from the Zoning Officer", c: "App. B § 17-10; RIGL § 45-24-54"}
+      - {t: "Sewer or septic approval and water service confirmation", c: "App. B § 5-2; Ch. 40"}
+      - {t: "Ask the Building Official for the current permit application and plan requirements. The code doesn't list them", c: "App. B § 17-2"}
+
+# ---------- Utilities (not town staff): from utility and town websites, read 2026-10-16. Confirm numbers before relying on them ----------
+utility_contacts:
+  pwsb: {name: "Pawtucket Water Supply Board", title: "Water supplier for Valley Falls and southern Cumberland", phone: "401-729-5000", email: "", extra: "Engineering/GIS 401-729-5015 · Customer Service 401-729-9050 · 85 Branch St, Pawtucket", when: "Is there an active water service and main at the lot? Meter size?"}
+  cumberland_water: {name: "Cumberland Water Department", title: "Water supplier north of Marshall Ave", phone: "401-658-0666", email: "", extra: "98 Nate Whipple Hwy", when: "Is there an active water service and main at the lot? Meter size?"}
+  nbc: {name: "Narragansett Bay Commission, permitting", title: "Runs the Bucklin Point plant. Sewer connection permits come first", phone: "", email: "permits@narrabay.com", extra: "https://www.narrabay.com/services/permitting/", when: "Sewer connection permit (residential covers up to 6 units)"}
+
+# ---------- Contact tasks: calls and emails to make, shown in the approval checklist ----------
+# when: always | ld (land development or mixed-use) | relief | sewer | historic | adu_or_two | water_any
+contact_tasks:
+  - id: planning_pre
+    phase: talk
+    kind: town
+    contact: "Amelia Morton"
+    when: always
+    title: "Ask Planning which review applies to your project"
+    detail: "A short call or email now can save a resubmission. Staff tell you whether this is a building permit only, a modification, a minor land development or a major one."
+    asks:
+      - "Which review applies to my project, and who decides it?"
+      - "Can we schedule a pre-application meeting? (Required for major projects, optional for others.)"
+      - "Please send the current submission checklist. The posted Appendix D is dated 2015."
+      - "What is the next filing deadline? The 2026 schedule has none left."
+    expect: "Email or notes from the call"
+    cite: "Appendix A § 5-E"
+  - id: clerk_forms
+    phase: talk
+    kind: town
+    contact: "Frank Polidoro"
+    when: ld
+    title: "Get the current forms, number of copies and filing deadline"
+    detail: "The Planning Clerk is named in the 2026 schedule as the person who helps applicants prepare."
+    asks:
+      - "Where do I file, and are applications submitted on paper, through the OpenGov portal, or both?"
+      - "How many plan copies and what sheet size do you want today?"
+      - "What are the current fees? (The posted schedule is dated 2015.)"
+    expect: "Application form or fee sheet"
+    cite: "2026 TRC / Planning Board schedule"
+  - id: zoning_relief
+    phase: talk
+    kind: town
+    contact: "Building Official / Zoning Officer"
+    when: relief
+    title: "Ask the Zoning Officer about a modification or variance"
+    detail: "Your numbers show relief is needed. A modification of up to 15% is decided by the Zoning Officer. Anything bigger goes to the Zoning Board or the Planning Board."
+    asks:
+      - "Does my shortfall qualify for a modification (up to 15%)?"
+      - "Which form do I use, and what is the filing fee?"
+      - "Who must I notify, and do you prepare the abutter list?"
+    expect: "Modification or variance application form"
+    cite: "Appendix B § 18-4, § 17-10"
+  - id: historic
+    phase: talk
+    kind: town
+    contact: "Amelia Morton"
+    when: historic
+    title: "Ask about the Historic District Commission"
+    detail: "The lot is inside a historic district overlay. Exterior changes need a Certificate of Appropriateness."
+    asks:
+      - "Which exterior work needs a Certificate of Appropriateness?"
+      - "When does the Commission meet, and what do I file?"
+    expect: "Commission application"
+    cite: "Appendix B § 8-6"
+  - id: sewer_letter
+    phase: talk
+    kind: sewer
+    contact: "Sewer Superintendent"
+    when: sewer
+    title: "Get written confirmation of sewer service"
+    detail: "The sewer map in this tool is a planning map from about 2012. Only Public Works can say whether this lot is connected. Planning needs this letter for land development plans."
+    asks:
+      - "Is the building connected to town sewer, and which main serves it?"
+      - "Can you send a sewer availability letter for this lot and project?"
+      - "Is there a sewer connection permit or sewer-use account on file? Is any capacity limit known?"
+    expect: "Sewer availability letter"
+    cite: "Appendix D Art. E(1)(f); Ch. 40"
+  - id: water_letter
+    phase: talk
+    kind: water
+    utility: water
+    when: water_any
+    title: "Confirm public water service and meter size"
+    detail: "Your water supplier comes from a 2022 state map with generous boundaries. Ask the supplier directly."
+    asks:
+      - "Is there an active service and a main in front of this lot?"
+      - "What meter size would the project need?"
+      - "Can you provide the certification Planning requires for land development plans?"
+    expect: "Water service confirmation"
+    cite: "Appendix D Art. E(1)(e)"
+  - id: nbc_permit
+    phase: build
+    kind: sewer
+    utility: nbc
+    when: adu_or_two_or_ld
+    title: "Apply for the Narragansett Bay Commission sewer connection permit"
+    detail: "A new or larger sewer connection needs the NBC permit first. The Town sewer permit follows, with the NBC permit attached."
+    asks:
+      - "Which NBC permit form applies (residential covers up to 6 units)?"
+      - "What do you need from the water supplier (meter size sheet)?"
+    expect: "NBC permit approval"
+    cite: "Town Sewers page; NBC permitting"
+  - id: building_official
+    phase: build
+    kind: town
+    contact: "Building Official / Zoning Officer"
+    when: always
+    title: "Ask the Building Official for the building permit checklist"
+    detail: "The zoning code doesn't list what a building permit package needs. Ask for the current application and plan requirements."
+    asks:
+      - "What does the building permit application need for this project?"
+      - "Do you need a zoning certificate first? (State law: issued within 20 days of a written request.)"
+    expect: "Building permit application"
+    cite: "Appendix B § 17-2; RIGL § 45-24-54"

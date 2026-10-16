@@ -1,0 +1,107 @@
+# Providence — Checklist for Minor Land Development Project, Preliminary Plan
+# Source: Providence Land Development and Subdivision Review Regulations (Dec 16, 2025),
+#   Appendix C, printed pp. 48-50 (PDF pp. 51-53).
+#   https://www.providenceri.gov/wp-content/uploads/2026/01/25.12.16-Land-Development-and-Subdivision-Review-Regulations.pdf
+# Read: 2026-10-16. Drafted by AI from the regulation text; CHECK EACH ITEM against the source.
+#
+# Fields:
+#   id         checklist item number in Appendix C
+#   text       the requirement, shortened (see source for full wording)
+#   page       printed page in the regulations
+#   applies    always | udr (only when zoning relief / Unified Development Review) | if_needed
+#   keywords   words used to find candidate pages in the application (retrieval)
+#   in_pdf     true if a PDF package can show this; false = office/paper item the tool can't verify
+
+town: Providence
+application_type: Minor Land Development Project
+stage: Preliminary Plan
+source_title: "Providence Land Development and Subdivision Review Regulations, Appendix C"
+source_version: "2025-12-16"
+source_url: "https://www.providenceri.gov/wp-content/uploads/2026/01/25.12.16-Land-Development-and-Subdivision-Review-Regulations.pdf"
+read_date: "2026-10-16"
+
+items:
+  - {id: 1, page: 48, applies: always, in_pdf: false,
+     text: "Completed and factually accurate online application signed by the applicant.",
+     keywords: [application, applicant, signature, signed]}
+  - {id: 2, page: 48, applies: if_needed, in_pdf: true,
+     text: "Notarized letter of owner consent (not required if the owner is the applicant).",
+     keywords: [owner, consent, notarized, authorization, permission]}
+  - {id: 3, page: 48, applies: always, in_pdf: false,
+     text: "Application fee(s).",
+     keywords: [fee, payment]}
+  - {id: 4, page: 48, applies: if_needed, in_pdf: true,
+     text: "Class I land survey, legible scale, sheets at least 11x17, multiple sheets with key map and numbered (sheet 1 of N). Four copies; ten if CPC review.",
+     keywords: [survey, class i, surveyor, existing conditions, sheet, key map]}
+  - {id: 5, page: 48, applies: if_needed, in_pdf: true,
+     text: "Survey contents: title, date/revisions, plat and lot numbers, scale and north arrow, deed book/page, surveyor stamp, zoning and overlay districts (boundary lines if more than one), dimensional compliance table (lot size, width, building/impervious/pervious coverage, setbacks), all zoning deficiencies, boundary lines, significant trees (1503.B), structures, curb cuts, pervious/impervious surfaces, parking spaces, rights of way and easements.",
+     keywords: [plat, lot, deed, book, page, north, scale, zoning, overlay, setback, coverage, impervious, tree, curb cut, easement]}
+  - {id: 6, page: 49, applies: always, in_pdf: true,
+     text: "Certified copies of deed(s) for all parcels.",
+     keywords: [deed, recorder of deeds, book, page, certified]}
+  - {id: 7, page: 49, applies: always, in_pdf: true,
+     text: "Narrative summarizing project scope and proposed changes.",
+     keywords: [narrative, project description, scope, proposing to, proposed, overview]}
+  - {id: 8, page: 49, applies: always, in_pdf: true,
+     text: "Demonstration of zoning compliance, or a cover letter plainly identifying zoning deficiencies, non-compliance, or necessary relief.",
+     keywords: [land use and zoning, zoning requirement, required, existing, proposed, variance, relief, special use, permitted use]}
+  - {id: 9, page: 49, applies: if_needed, in_pdf: false,
+     text: "Any other documents required by the Administrative Officer to demonstrate zoning compliance.",
+     keywords: []}
+  - {id: 10, page: 49, applies: always, in_pdf: true,
+     text: "Existing conditions plan showing existing development and lot configuration.",
+     keywords: [existing conditions, existing, survey, demolition]}
+  - {id: 11, page: 49, applies: always, in_pdf: true,
+     text: "Site plan: proposed structures, parking with aisle and stall dimensions, landscaped areas, streets, dimensional compliance table, transformers and HVAC, wetlands/coastal features within 200 ft, base flood elevation, National Register parcels, proposed street names.",
+     keywords: [site plan, layout, parking, stall, aisle, transformer, hvac, flood, wetland, zoning table]}
+  - {id: 12, page: 49, applies: always, in_pdf: true,
+     text: "Grading plan with existing and proposed contours at 2-foot intervals.",
+     keywords: [grading, contour, elevation, spot grade]}
+  - {id: 13, page: 49, applies: always, in_pdf: true,
+     text: "Soil erosion and sediment control plan.",
+     keywords: [erosion, sediment, silt, soil, construction entrance]}
+  - {id: 14, page: 49, applies: always, in_pdf: true,
+     text: "Landscape plan with plantings, tree species, and canopy coverage calculations.",
+     keywords: [landscape, planting, tree, canopy, species, shrub]}
+  - {id: 15, page: 49, applies: always, in_pdf: true,
+     text: "Utility plan with existing and proposed sewer, water, gas, electric, telecom, fire alarm, hydrants, poles, and stormwater.",
+     keywords: [utility, sewer, water, gas, electric, hydrant, pole, drain]}
+  - {id: 16, page: 49, applies: if_needed, in_pdf: true,
+     text: "For building construction: diagram of average grade and building height calculated from average grade.",
+     keywords: [average grade, building height, height, grade plane]}
+  - {id: 17, page: 49, applies: if_needed, in_pdf: true,
+     text: "Building elevations of all facades showing materials, fenestration, transparency calculations, and building height.",
+     keywords: [elevation, facade, material, transparency, fenestration, window]}
+  - {id: 18, page: 49, applies: if_needed, in_pdf: true,
+     text: "Floor plans if needed for zoning compliance, including a roof plan with mechanical equipment.",
+     keywords: [floor plan, level, roof plan, mechanical, unit]}
+  - {id: 19, page: 50, applies: always, in_pdf: true,
+     text: "Development rendering(s) showing overall massing and views from public streets.",
+     keywords: [rendering, perspective, massing, view, axonometric]}
+  - {id: 20, page: 50, applies: if_needed, in_pdf: true,
+     text: "Signage plan with locations, dimensions, and a conformance table (if signs are proposed).",
+     keywords: [sign, signage]}
+  - {id: 21, page: 50, applies: always, in_pdf: true,
+     text: "Lighting plan with locations and heights of poles and fixtures, plus fixture cut sheets.",
+     keywords: [lighting, light, fixture, pole, photometric, cut sheet, luminaire]}
+  - {id: 22, page: 50, applies: always, in_pdf: true,
+     text: "Drainage plan for stormwater runoff, with drainage calculations if required by the stormwater ordinance.",
+     keywords: [drainage, stormwater, runoff, catch basin, infiltration, calculations]}
+  - {id: 23, page: 50, applies: if_needed, in_pdf: true,
+     text: "Traffic study, if required by the administrative officer, the Commission, or the City Traffic Engineer.",
+     keywords: [traffic, trip generation, level of service]}
+  - {id: 24, page: 50, applies: if_needed, in_pdf: true,
+     text: "If a street is proposed: street plan with profiles and cross-sections.",
+     keywords: [street, profile, cross-section, roadway]}
+  - {id: 25, page: 50, applies: udr, in_pdf: true,
+     text: "Completed Unified Development Review (UDR) form for items that require zoning relief.",
+     keywords: [unified development review, udr, relief, variance, special use permit]}
+  - {id: 26, page: 50, applies: udr, in_pdf: true,
+     text: "Names and addresses of owners of all properties, agencies, or communities requiring notification.",
+     keywords: [abutter, notification, owners, radius, mailing list]}
+  - {id: 27, page: 50, applies: udr, in_pdf: false,
+     text: "Applicant notifies all properties, agencies, or communities requiring notification.",
+     keywords: [notice, notification, mailing]}
+  - {id: 28, page: 50, applies: udr, in_pdf: false,
+     text: "Affidavit of mailings with proof of newspaper notice, before a certificate of completeness.",
+     keywords: [affidavit, newspaper, notice, mailing]}
